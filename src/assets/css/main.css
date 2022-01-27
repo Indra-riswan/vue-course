@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap");
+#app {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.router-link-exact-active {
+  font-weight: bold;
+}
+
+.hero-row .hero-col h2 {
+  margin-top: 5em;
+}
+
+.hero-row .hero-col .btn-success {
+  background-color: #4eb883;
+  border: 0;
+  border-radius: 2em;
+  color: #e9f9f4;
+}
+/*# sourceMappingURL=main.css.map */
