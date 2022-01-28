@@ -14,8 +14,8 @@
           <router-link
             class="btn btn-success"
             style="background-color: #4eb883; color: #e9f9f4; border: 0"
-            to="/"
-            ><b-icon icon="eye"></b-icon> Lihat Detail</router-link
+            to="/makanan"
+            ><b-icon icon="eye"></b-icon> Lihat Semua</router-link
           >
         </div>
       </div>

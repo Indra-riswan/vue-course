@@ -7,7 +7,7 @@
         <p class="card-text">
           {{ menu.nama }}
         </p>
-            <router-link class="btn btn-primary" to="/" style="background-color: #4eb883; border: 0;" ><b-icon icon="cart"></b-icon> Pesan!</router-link>
+            <router-link class="btn btn-primary" :to="'/makanan/'+ menu.id" style="background-color: #4eb883; border: 0;" ><b-icon icon="cart"></b-icon> Pesan!</router-link>
       </div>
     </div>
   </div>

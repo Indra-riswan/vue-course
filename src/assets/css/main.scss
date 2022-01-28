@@ -11,10 +11,19 @@ $secondary: #e9f9f4;
     font-weight: bold;
 }
 
+h3, h2{
+    color: grey;
+}
+
+
 .hero-row{
     .hero-col{
         h2{
             margin-top: 5em;
+            color: grey;
+        }
+        p{
+            color: grey;
         }
         .btn-success{
             background-color: $primary;
@@ -34,20 +43,47 @@ $secondary: #e9f9f4;
     }
 }
 
-// @media only screen and (max-width: 767px){
-//     .hero-row{
-//         .hero-col{
-//             h2{
-//                 margin-top: -5em;
-//             }
-//             .btn-success{
-//                 background-color: $primary;
-//                 border: 0;
-//                 border-radius: 2em;
-//                 color: $secondary;
-//             }
-//         }
-//     }
-// }
+@media only screen and (max-width: 767px){
+    .hero-row{
+        .hero-col{
+            h2{
+                margin-top: 2em;
+                color: grey;
+            }
+            p{
+                color: grey;
+            }
+            .btn-success{
+                background-color: $primary;
+                border: 0;
+                border-radius: 2em;
+                color: $secondary;
+            }
+        }
+    }
+}
+
+.breadcrumb{
+    background-color: $secondary;
+    .link{
+        font-weight: bold;
+    }
+    .breadcrumb-item{
+        .item{
+            color: grey;
+        }
+    }
+}
+
+.list-group{
+    .list-group-item{
+        color: grey;
+        font-weight: bold;
+    }
+}
+
+.form-label{
+    color: grey;
+}
 
 

@@ -6,7 +6,7 @@
         <div class="col-md-6 hero-col">
           <h2><strong>Menu Makanan Favorit</strong><br />di warung ini</h2>
           <p>Pilih dan Pesan Makanan Favorit Anda</p>
-          <router-link class="btn btn-lg btn-success cus-btn" to="/"
+          <router-link class="btn btn-lg btn-success cus-btn" to="/makanan"
             ><b-icon icon="arrow-right"></b-icon> Pesan</router-link
           >
         </div>
@@ -24,7 +24,7 @@
         <div class="col-md-6 hero-col">
           <h2><strong>Menu Makanan Favorit</strong><br />di warung ini</h2>
           <p>Pilih dan Pesan Makanan Favorit Anda</p>
-          <router-link class="btn btn-lg btn-success cus-btn" to="/"
+          <router-link class="btn btn-lg btn-success cus-btn" to="/makanan"
             ><b-icon icon="arrow-right"></b-icon> Pesan</router-link>
         </div>
       </div>

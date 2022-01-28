@@ -7,8 +7,17 @@
   font-weight: bold;
 }
 
+h3, h2 {
+  color: grey;
+}
+
 .hero-row .hero-col h2 {
   margin-top: 5em;
+  color: grey;
+}
+
+.hero-row .hero-col p {
+  color: grey;
 }
 
 .hero-row .hero-col .btn-success {
@@ -24,5 +33,42 @@
 
 .cardproduct .card-cus .card-img-top {
   border-radius: 1.5em;
+}
+
+@media only screen and (max-width: 767px) {
+  .hero-row .hero-col h2 {
+    margin-top: 2em;
+    color: grey;
+  }
+  .hero-row .hero-col p {
+    color: grey;
+  }
+  .hero-row .hero-col .btn-success {
+    background-color: #4eb883;
+    border: 0;
+    border-radius: 2em;
+    color: #e9f9f4;
+  }
+}
+
+.breadcrumb {
+  background-color: #e9f9f4;
+}
+
+.breadcrumb .link {
+  font-weight: bold;
+}
+
+.breadcrumb .breadcrumb-item .item {
+  color: grey;
+}
+
+.list-group .list-group-item {
+  color: grey;
+  font-weight: bold;
+}
+
+.form-label {
+  color: grey;
 }
 /*# sourceMappingURL=main.css.map */
