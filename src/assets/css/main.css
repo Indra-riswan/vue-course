@@ -17,4 +17,12 @@
   border-radius: 2em;
   color: #e9f9f4;
 }
+
+.cardproduct .card-cus {
+  border-radius: 1.5em;
+}
+
+.cardproduct .card-cus .card-img-top {
+  border-radius: 1.5em;
+}
 /*# sourceMappingURL=main.css.map */

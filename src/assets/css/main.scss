@@ -25,3 +25,29 @@ $secondary: #e9f9f4;
     }
 }
 
+.cardproduct{
+    .card-cus{
+        border-radius: 1.5em;
+        .card-img-top{
+            border-radius: 1.5em;
+        }
+    }
+}
+
+// @media only screen and (max-width: 767px){
+//     .hero-row{
+//         .hero-col{
+//             h2{
+//                 margin-top: -5em;
+//             }
+//             .btn-success{
+//                 background-color: $primary;
+//                 border: 0;
+//                 border-radius: 2em;
+//                 color: $secondary;
+//             }
+//         }
+//     }
+// }
+
+
