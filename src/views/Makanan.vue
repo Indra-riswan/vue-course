@@ -12,6 +12,7 @@
       <div class="row">
         <div class="col">
           <div class="input-group mb-3">
+            <!-- model serach -->
             <input v-model="search"
               type="text"
               class="form-control"
@@ -19,7 +20,8 @@
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
               @keyup="searchfood"
-            />
+              />
+              <!-- end model serach -->
             <span class="input-group-text" id="basic-addon2"
               ><b-icon icon="search"></b-icon> Search</span
             >

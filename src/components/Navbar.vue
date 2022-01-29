@@ -37,7 +37,7 @@
                 <span
                   class="badge badge-success ml-2"
                   style="background-color: #4eb883"
-                  >0</span
+                  >{{ total.length }} </span
                 >
               </router-link>
             </li>
@@ -49,8 +49,31 @@
 </template>
 
 <script>
+import axios from 'axios';
+
+
 export default {
   name: "Navbar",
+
+   data() {
+    return {
+      total: [],
+    };
+  },
+
+  methods: {
+    setJumlah(data){
+      this.total = data
+    },
+
+    mounted(){
+      axios
+      .get("http://localhost:3000/keranjangs")
+      .then((response) => this.setJumlah(response.data))
+      .catch((Error) => console.log(Error))
+    }
+  }
+
 };
 </script>
 

@@ -45,33 +45,13 @@
             <li class="list-group-item">Rp. {{ product.harga }}</li>
           </ul>
           <br />
-          <form class="row g-3">
-            <div class="col">
-              <label for="validationDefault01" class="form-label">Nama</label>
-              <input
-                type="text"
-                class="form-control"
-                id="validationDefault01"
-                placeholder="Nama Pemesan"
-                required
-              />
-            </div>
-            <div class="col">
-              <label for="validationDefault02" class="form-label"
-                >No Meja</label
-              >
-              <input
-                type="number"
-                class="form-control"
-                id="validationDefault02"
-                required
-              />
-            </div>
+          <!-- form validation -->
+          <form v-on:submit.prevent class="row g-3">
             <div class="col">
               <label for="validationDefault02" class="form-label"
                 >Jumlah Pesanan</label
               >
-              <input
+              <input v-model="pesan.jumlah"
                 type="number"
                 class="form-control"
                 id="validationDefault02"
@@ -80,15 +60,16 @@
             </div>
           </form>
           <br />
+          <!-- text area -->
           <div class="form-floating">
-            <textarea
+            <textarea v-model="pesan.comments"
               class="form-control"
               placeholder="Tinggalkan Pesan disini"
               id="floatingTextarea"
             ></textarea>
             <label for="floatingTextarea">Comments</label>
           </div>
-          <button
+          <button @click="pesanan"
             type="submit"
             class="btn btn-success"
             style="background-color: #4eb883; color: #e9f9f4; border: 0">
@@ -112,6 +93,8 @@ export default {
   data() {
     return {
       product: {},
+      pesan: {},
+      pemesan: {},
     };
   },
 
@@ -119,6 +102,25 @@ export default {
     setProduct(data) {
       this.product = data;
     },
+    setPemesan(data){
+      this.pemesan = data;
+    },
+    pesanan() {
+      if (this.pesan.jumlah) {
+        // this.pesan.produk = [
+        //   this.product.nama,
+        //   this.product.harga,
+        // ]
+        this.pesan.produk = this.product
+        axios
+        .post("http://localhost:3000/keranjangs", this.pesan)
+        .then(() => alert('berhasil memesan'))
+        .catch((err) => console.log(err))
+        this.$router.push({path: '/makanan'})
+      } else {
+        alert('silahkan masukan jumlah pesanan')
+      }
+    }
   },
 
   mounted() {
