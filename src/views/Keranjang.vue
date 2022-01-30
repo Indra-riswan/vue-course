@@ -3,6 +3,7 @@
     <Navbar />
     <br />
     <div class="container">
+      <!-- tabel -->
       <div class="row">
         <div class="col">
           <table class="table">
@@ -38,6 +39,7 @@
                   <button
                     @click="hapusKeranjang(keranjangs.id)"
                     class="btn btn-success"
+                    style="background-color: #4eb883; color: #e9f9f4; border: 0"
                   >
                     <b-icon-trash></b-icon-trash> Hapus
                   </button>
@@ -52,6 +54,41 @@
           </table>
         </div>
       </div>
+      <!-- end tabel -->
+
+      <!-- checkout -->
+      <div class="row justify-content-end mb-4">
+        <div class="col-md-4">
+          <form v-on:submit.prevent class="row g-3">
+            <label for="validationDefault02" class="form-label"
+              >Nama Pemesan</label
+            >
+            <input
+              v-model="checkout.nama"
+              type="text"
+              class="form-control"
+              id="validationDefault02"
+              required
+            />
+            <label for="validationDefault02" class="form-label">No Meja</label>
+            <input
+              v-model="checkout.noMeja"
+              type="number"
+              class="form-control"
+              id="validationDefault02"
+              required
+            />
+            <button @click="checkoutPesanan"
+            type="submit"
+            class="btn btn-success mt-2"
+            style="background-color: #4eb883; color: #e9f9f4; border: 0">
+            <b-icon icon="cart"></b-icon> Checkout
+          </button>
+          </form>
+        </div>
+      </div>
+      <!-- end checkout -->
+
     </div>
   </div>
 </template>
@@ -68,6 +105,7 @@ export default {
   data() {
     return {
       keranjang: [],
+      checkout: {},
     };
   },
 
@@ -88,6 +126,27 @@ export default {
         })
         .catch((err) => console.log(err));
     },
+
+    checkoutPesanan(){
+     if(this.checkout.nama && this.checkout.noMeja){
+        this.checkout.keranjang = this.keranjang
+      axios
+      .post("http://localhost:3000/pesanans",this.checkout)
+      .then(() => {
+        alert("sukses Checkout Barang")
+      this.$router.push({path: "/checkout"})
+
+      this.keranjang.map(function(item){
+        return axios
+        .delete("http://localhost:3000/keranjangs/" + item.id)
+        .catch((err) => console.log(err))
+      })
+      })
+      .catch((err) => console.log(err))
+     }else {
+       alert("Lengkapi Kolom Checkout")
+     }
+    }
   },
 
   mounted() {
